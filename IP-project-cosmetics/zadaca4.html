@@ -1,0 +1,43 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function ConstructorKniga(title, author, alreadyRead){
+			this.title = title;
+			this.author = author;
+			this.alreadyRead = alreadyRead;
+		}
+		function pecati(a){
+			for (var i = 0; i < a.length; i++) {
+				if(a[i].alreadyRead == "true"){
+					document.write("<br>You already read " + a[i].title + " by " + a[i].author);
+				}
+				else{
+					document.write("<br> You still need to read " + a[i].title + " by " + a[i].author);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		var n = prompt("Vnesete broj na objekti: ");
+
+		var array = new Array(parseInt(n));
+
+
+		for (var i = 0; i < array.length; i++) {
+			var title = prompt("Vnesete naslov: ");
+			var author = prompt("Vnesete avtor: ");
+			var alreadyRead = prompt("Dali e procitana: ");
+
+			array[i] = new ConstructorKniga(title, author, alreadyRead);
+		}
+
+		pecati(array);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function izbrisi_el(array, element){
+			var index = array.indexOf(element);	
+			array.splice(index, 1);
+			return array;
+			}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		var n = prompt("Vnesete broj na elementi vo nizata: ");
+		var a = new Array(parseInt(n));
+		for (var i = 0; i < a.length; i++) {
+			a[i] = prompt("Vnesete go "+ i +" element: ");
+		}
+		var element = prompt("Vnesete element za brisenje:");
+		document.write("Nizata so izbrisan " + element + "ti element e: " + izbrisi_el(a, element).join(" "));
+	</script>
+</body>
+</html>

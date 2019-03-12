@@ -1,0 +1,24 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function Cilindar(radius, visina){
+			this.radius = radius;
+			this.visina = visina;
+		}
+		function presmetajV(radius, visina){
+			return (3.14 * (radius* radius) * visina);
+		}
+	</script>
+
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		var radius = parseInt(prompt("Vnesete radius: "));
+		var visina = parseInt(prompt("Vnesete visina: "));
+		var object = new Cilindar(radius, visina);
+		document.write("Volumenot e: " + presmetajV(parseInt(object.radius), parseInt(object.visina)));
+	</script>
+</body>
+</html>

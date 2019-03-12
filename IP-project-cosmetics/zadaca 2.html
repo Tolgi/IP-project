@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca 2</title>
+</head>
+<body>
+<h3>
+    <script>
+       var b = prompt("Vnesi telefonski broj");
+       var c = parseInt(b/1000000);
+       var d = parseInt(b/1000);
+       var e = d%1000;
+       var m = b%1000;
+       if(parseInt(m/100)==0)
+           if(!parseInt(m/10))  m = "00" + m;
+      else m= "0" + m;
+       document.write("0" + c + "/" + e + "-" + m);
+
+       if(c == 70 || c == 71 || c == 72) document.write("T-Mobile");
+       else if (c == 75 || c == 76) document.write("One");
+       else if (c == 77 || c==78) document.write("Vip");
+   </script>
+</h3>
+
+</body>
+</html>

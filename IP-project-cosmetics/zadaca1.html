@@ -1,0 +1,31 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function izbrisi(pole){
+			for (var i = 0; i < pole.length; i++) {
+				for (var j = i+1; j < pole.length; j++) {
+					if(pole[i] == pole[j]){
+						pole.splice(j, 1);
+					}
+				}
+			}
+			if(pole[0] == pole[1]) 
+				return pole.splice(1, 1);
+			else return pole;	
+		}
+	</script>
+
+</head>
+<body>
+	<script type="text/javascript">
+		var n = prompt("Vnesete broj na elementi vo listata: ");
+		var broj_elementi = parseInt(n);
+		var pole = new Array(broj_elementi);
+		for (var i = 0; i < pole.length; i++) {
+			pole [i] = prompt("Vnesete go " + i + " element od listata:");
+		}
+		document.write("Nizata bez duplikati:" + izbrisi(pole));
+
+	</script>
+</body>
+</html>
