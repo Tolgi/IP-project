@@ -1,0 +1,194 @@
+.logo {
+width: 100px;
+height: auto;
+margin-top: 30px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+}
+
+
+.myalbum{
+    width: 25%;
+    height: auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+.lista-album{
+    width: 15%;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 100px;
+    display: block;
+    float: left;
+}
+
+.leftb{
+   font-size:40px;
+margin-left:40%;
+}
+.rightb{
+    font-size:40px;
+    margin-left:16%;
+}
+
+
+
+.like {
+    background-color: #3b5998;
+    border-radius: 4px;
+    color:white;
+    padding: 5px 20px;
+    border-color: #304066;
+}
+
+.like:hover {
+    background-color: #304066;
+
+}
+
+.dislike {
+    background-color: #cc181e;
+    border-radius: 4px;
+    color:white;
+    padding: 5px 20px;
+    border-color: #960000;
+}
+
+.dislike:hover {
+    background-color: #960000;
+}
+
+.remove {
+     background-color: #ff5d09;
+    border-radius: 4px;
+    color:white;
+    padding: 5px 20px;
+    border-color: #b74306;
+}
+
+.remove:hover {
+    background-color: #b74306;
+}
+
+.like-icon {
+    width: 20px;
+    height: auto;
+    margin: 2px;
+    position: relative;
+}
+
+.mail {
+    background-color: #191a4f;
+    border-radius: 4px;
+    color:white;
+    padding: 5px 20px;
+    border-color: #304066;
+    display:block;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  font-family: Arial;
+  color: #111;
+}
+
+.navbar {
+    padding-bottom: 20px;
+}
+ 
+.navbar ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.navbar li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+ 
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+  font-weight: 700;
+}
+ 
+.navbar a:hover {
+  background-color: #d30b7d;
+}
+ 
+.navbar a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+ 
+@media screen and (min-width: 600px) {
+    .navbar li {
+        width: 120px;
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .navbar li {
+        display: inline-block;
+        margin-right: -4px;
+    }
+
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 70%;
+    }
+
+    #lista {
+        margin-top: 40px;
+    }
+
+    #lista > li {
+        font-weight: 700;
+        margin-left: 20%;
+        padding-bottom: 20px;
+    }
+
+    .form {
+        display: block;
+        margin-left: 44%;
+        margin-bottom: 50px;
+    }
+
+    hr {
+
+        text-align: center;
+        color: #777;
+        width: 65%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+    }
+}

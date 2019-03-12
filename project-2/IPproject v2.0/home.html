@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AlbumOfBooks</title>
+    <script src="js/libraries/jquery-3.1.1.js"></script>
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home Page</a></li>
+                    <li><a href="album.html">Album</a></li>
+                    <li><a href="addtoalbum.html">Add To Album</a></li>
+                    <li><a href="mailto.html">Contact Us</a></li>
+                </ul>
+    </nav>
+    <div class="container">
+<div id="prvdiv">
+    <img class="logo" src="Images/logo.png" style="width:30%; height:30%;">
+    <h1 style="text-align: center;"><strong>AlbumOFbooks.com</strong></h1>
+    <div style="text-align: center;"><p>We're here to give you ideas for your next book purchase</p></div>
+   <ol id="lista">
+        <li id="k1">
+         <img class="lista-album" src="Images/got.jpg"/>
+            <span class="ime">Game of Thrones:A Dance With Dragons</span>
+            <p id="k11">
+                <button class="like">Like</button>
+                <img class="like-icon" src="Images/fb-icon.png"/>
+                <span class="countlike"></span>
+            </p>
+            <p id="k12">
+                <button class="dislike">Dislike</button>
+                <img class="like-icon" src="Images/dislike-icon.png"/>
+                <span class="countdislike"></span>
+            </p>
+            <span><button class="remove" id="removek1">Remove this item</button></span>
+        </li>
+        <hr>
+        <li id="k2">
+          <img class="lista-album" src="Images/sherlock holmes.jpg"/>
+
+            <span class="ime">Sherlock Holmes: The Hound Of Baskerville</span>
+            <p id="k21">
+                <button class="like">Like</button>
+                <img class="like-icon" src="Images/fb-icon.png"/>
+                <span class="countlike"></span>
+            </p>
+            <p id="k22">
+                <button class="dislike">Dislike</button>
+                <img class="like-icon" src="Images/dislike-icon.png"/>
+                <span class="countdislike"></span>
+            </p>
+            <span><button class="remove" id="removek2">Remove this item</button></span>
+        </li>
+        <hr>
+        <li id="k3">
+         <img class="lista-album" src="Images/the emperor's tomb.jpg"/>
+
+            <span class="ime">The Emperor's Tomb</span>
+            <p id="k31">
+                <button class="like">Like</button>
+                <img class="like-icon" src="Images/fb-icon.png"/>
+                <span class="countlike"></span>
+            </p>
+            <p id="k32">
+                <button class="dislike">Dislike</button>
+                <img class="like-icon" src="Images/dislike-icon.png"/>
+                <span class="countdislike"></span>
+            </p>
+            <span><button class="remove" id="removek3">Remove this item</button></span>
+        </li>
+        <hr>
+        <li id="k4">
+            <img class="lista-album" src="Images/star wars.jpg"/>
+
+            <span class="ime">Star Wars Darth Plageious</span>
+            <p id="k41">
+                <button class="like">Like</button>
+                <img class="like-icon" src="Images/fb-icon.png"/>
+                <span class="countlike"></span>
+            </p>
+            <p id="k42">
+                <button class="dislike">Dislike</button>
+                <img class="like-icon" src="Images/dislike-icon.png"/>
+                <span class="countdislike"></span>
+            </p>
+            <span><button class="remove" id="removek4">Remove this item</button></span>
+        </li>
+    </ol>
+</div>
+</div>
+    </body>
+<script>
+    $("#k11").on("click", function(e){
+        var $counter = $(this).find(".countlike");
+        var countlike = $counter.text() | 0;
+        $counter.text(countlike + 1);
+        createCookie('like_1', countlike+1);
+    });
+    $("#k12").on("click", function(e){
+        var $counter2 = $(this).find(".countdislike");
+        var countdislike = $counter2.text() | 0;
+        $counter2.text(countdislike + 1);
+        createCookie('dislike_1', countdislike+1);
+    });
+    $("#k21").on("click", function(e){
+        var $counter = $(this).find(".countlike");
+        var countlike = $counter.text() | 0;
+        $counter.text(countlike + 1);
+        createCookie('like_2', countlike+1);
+    });
+    $("#k22").on("click", function(e){
+        var $counter2 = $(this).find(".countdislike");
+        var countdislike = $counter2.text() | 0;
+        $counter2.text(countdislike + 1);
+        createCookie('dislike_2', countdislike+1);
+    });
+    $("#k31").on("click", function(e){
+        var $counter = $(this).find(".countlike");
+        var countlike = $counter.text() | 0;
+        $counter.text(countlike + 1);
+        createCookie('like_3', countlike+1);
+    });
+    $("#k32").on("click", function(e){
+        var $counter2 = $(this).find(".countdislike");
+        var countdislike = $counter2.text() | 0;
+        $counter2.text(countdislike + 1);
+        createCookie('dislike_3', countdislike+1);
+    });
+    $("#k41").on("click", function(e){
+        var $counter = $(this).find(".countlike");
+        var countlike = $counter.text() | 0;
+        $counter.text(countlike + 1);
+        createCookie('like_4', countlike+1);
+    });
+    $("#k42").on("click", function(e){
+        var $counter2 = $(this).find(".countdislike");
+        var countdislike = $counter2.text() | 0;
+        $counter2.text(countdislike + 1);
+        createCookie('dislike_4', countdislike+1);
+    });
+    $("#removek1").on("click", function(e){
+        var elem= document.getElementById('k1');
+        elem.parentNode.removeChild(elem);
+    });
+    $("#removek2").on("click", function(e){
+        var elem2= document.getElementById('k2');
+        elem2.parentNode.removeChild(elem2);
+    });
+    $("#removek3").on("click", function(e){
+        var elem3= document.getElementById('k3');
+        elem3.parentNode.removeChild(elem3);
+    });
+    $("#removek4").on("click", function(e){
+        var elem4= document.getElementById('k4');
+        elem4.parentNode.removeChild(elem4);
+    });
+
+</script>
+</html>

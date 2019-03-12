@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <script type="text/javascript"></script>
+    <script src="js/libraries/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home Page</a></li>
+                    <li><a href="album.html">Album</a></li>
+                    <li><a href="addtoalbum.html">Add To Album</a></li>
+                    <li><a href="mailto.html">Contact Us</a></li>
+                </ul>
+    </nav>
+    <h1 style="text-align: center">Get in touch with someone</h1>
+    <div class="form">
+    <input placeholder="Your e-mail" type="email" name="email" required="required" id="email">
+    <br>
+    <br>
+    <textarea placeholder="Your message" id="message"></textarea>
+    <br><button id="sendmail">Send</button>
+    </div>
+
+        <h1 style="text-align: center">Also you can send an e-mail to us</h1>
+
+        
+            <a class="mail" href="mailto:contact@example.com">Send e-mail</a>
+
+</body> 
+
+
+
+<script>
+$("#sendmail").click(function(){
+    var address=$("#email").val();
+    var msg=$("#message").val();
+    mailto=address?body=msg;
+});
+</script>
+</html>

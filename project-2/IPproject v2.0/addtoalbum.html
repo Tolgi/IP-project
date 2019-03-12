@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Album</title>
+    <script type="text/javascript"></script>
+    <script src="js/libraries/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home Page</a></li>
+                    <li><a href="album.html">Album</a></li>
+                    <li><a href="addtoalbum.html">Add To Album</a></li>
+                    <li><a href="mailto.html">Contact Us</a></li>
+                </ul>
+    </nav>
+<div class="container">
+<input type="file" onchange="viewFile()"><br>
+<img src="Images/loading.gif"  id="h" alt="Image loading..." height="200" width="400">
+    </div>
+</body>
+    <script>
+    function viewFile() {
+        var preview = document.querySelector('img');
+        var file    = document.querySelector('input[type=file]').files[0];
+        var reader  = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
+    </script>
+</html>

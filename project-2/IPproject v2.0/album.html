@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+        <script src="js/libraries/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home Page</a></li>
+                    <li><a href="album.html">Album</a></li>
+                    <li><a href="addtoalbum.html">Add To Album</a></li>
+                    <li><a href="mailto.html">Contact Us</a></li>
+                </ul>
+    </nav>
+<h2 style="text-align: center"><strong>The Album:</strong></h2>
+<div class="container">
+    <img class="myalbum" src="Images/got.jpg"/>
+    <img class="myalbum" src="Images/sherlock holmes.jpg"/>
+    <img class="myalbum" src="Images/star wars.jpg"/>
+    <img class="myalbum" src="Images/the emperor's tomb.jpg"/>
+
+
+    <a class="leftb" onclick="plusDivs(-1)">&#10094;</a>
+    <a class="rightb" onclick="plusDivs(1)">&#10095;</a>
+</div>
+<div id="Ime" style="text-align: center"></div>
+<div id="izdavacka" style="text-align: center"></div>
+<div id="Avtor" style="text-align: center"></div>
+<script>
+    var kniga1,kniga2,kniga3,kniga4,JSON1,JSON2,JSON3,JSON4,obj1,obj2,obj3,obj4,text1,text2,text3,text4;
+    //Storing in database
+    kniga1={"Ime":"Игра на Тронови Танц со Змејови","izdavacka":"Harper","Avtor":"Џорџ Р.Р. Мартин"};
+    JSON1=JSON.stringify(kniga1);
+    localStorage.setItem("Got",JSON1);
+    kniga2={"Ime":"Шерлок Холмс и Баскервилскиот загар","izdavacka":"Penguin","Avtor":"Артур Конан Дојл"};
+    JSON2=JSON.stringify(kniga2);
+    localStorage.setItem("Sherlock",JSON2);
+    kniga3={"Ime":"Војна на звездите Дарт Плегиус","izdavacka":"Del Rey Books","Avtor":"Џејмс Лучено"};
+    JSON3=JSON.stringify(kniga3);
+    localStorage.setItem("Star Wars",JSON3);
+    kniga4={"Ime":"Гробницата на Императорот","izdavacka":"Hodder","Avtor":"Стив Бери"};
+    JSON4=JSON.stringify(kniga4);
+    localStorage.setItem("emperor",JSON4);
+    //Retriving from database
+    text1 = localStorage.getItem("Got");
+    obj1 = JSON.parse(text1);
+    text2 = localStorage.getItem("Sherlock");
+    obj2 = JSON.parse(text2);
+    text3 = localStorage.getItem("Star Wars");
+    obj3 = JSON.parse(text3);
+    text4 = localStorage.getItem("emperor");
+    obj4 = JSON.parse(text4);
+
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("myalbum");
+        var s = document.getElementById("Ime");
+        var iz= document.getElementById("izdavacka");
+        var a=document.getElementById("Avtor");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+        var para,para2,para3;
+        if (s.firstChild == null) {
+            para = document.createElement("p");
+        } else {
+            para = s.firstChild;
+            var paraText = para.firstChild;
+            para.removeChild(paraText);
+        }
+        if (iz.firstChild == null) {
+            para2 = document.createElement("p");
+        } else {
+            para2 = iz.firstChild;
+            var paraText2 = para2.firstChild;
+            para2.removeChild(paraText2);
+        }
+        if (a.firstChild == null) {
+            para3 = document.createElement("p");
+        } else {
+            para3 = a.firstChild;
+            var paraText3 = para3.firstChild;
+            para3.removeChild(paraText3);
+        }
+        var t,t2,t3;
+        if(slideIndex==1) {
+            t =obj1.Ime;
+            t2=obj1.izdavacka;
+            t3=obj1.Avtor;
+        }
+        else if(slideIndex==2){
+            t=obj2.Ime;
+            t2=obj2.izdavacka;
+            t3=obj2.Avtor;
+        }
+        else if(slideIndex==3){
+            t=obj3.Ime;
+            t2=obj3.izdavacka;
+            t3=obj3.Avtor;
+        }
+        else{
+            t=obj4.Ime;
+            t2=obj4.izdavacka;
+            t3=obj4.Avtor;
+        }
+        var textForPara = document.createTextNode(t);
+        para.appendChild(textForPara);
+        s.append(para);
+        var textForPara2 = document.createTextNode(t2);
+        para2.appendChild(textForPara2);
+        iz.append(para2);
+        var textForPara3 = document.createTextNode(t3);
+        para3.appendChild(textForPara3);
+        a.append(para3);
+    }
+</script>
+</body>
+</html>
